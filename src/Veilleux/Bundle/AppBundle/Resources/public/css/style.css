@@ -85,3 +85,8 @@ table {
 table td {
     padding-right: 30px;
 }
+
+.img-left {
+    float: left;
+    margin: 0 35px 35px 0;
+}
