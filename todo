@@ -1,0 +1,5 @@
+fix table names
+
+fix bloc table choice query to not show pages with routes
+
+jquery 1.8 marche pas avec jquery ui

@@ -1,0 +1,32 @@
+{% extends 'MsiPaintBundle::layout.html.twig' %}
+
+{% block slogan %}Artiste peintre{% endblock slogan %}
+
+{% block social %}
+<a target="_blank" href="#"><img src="{{ asset('bundles/msipaint/img/facebook-white-32.png') }}" alt="Facebook"></a>
+{% endblock social %}
+
+{% block css %}
+{{ parent() }}
+<link rel="stylesheet" href="{{ asset('bundles/veilleuxapp/css/style.css') }}">
+{% endblock css %}
+
+{% block brand %}
+Pauline Veilleux
+{% endblock brand %}
+
+{% block js %}
+{{ parent() }}
+{# Google Analytics #}
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-36922705-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+{% endblock js %}
