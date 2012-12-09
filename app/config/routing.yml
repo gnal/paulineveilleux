@@ -32,3 +32,8 @@ msi_cmf_page:
 msi_cmf_loader:
     resource: .
     type: msi_cmf
+
+# override to remove locale from url
+msi_page_show:
+    pattern: /{slug}
+    defaults: { _controller: MsiCmfBundle:Page:show, slug: ~ }
