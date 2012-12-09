@@ -10,3 +10,4 @@
 app/SymfonyRequirements.php
 composer.lock
 /src/Msi/
+/web/counter.txt
