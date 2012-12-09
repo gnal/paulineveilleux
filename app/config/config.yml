@@ -79,7 +79,7 @@ msi_cmf:
             'VeilleuxAppBundle::layout.html.twig': 'Par défaut'
     block:
         actions:
-            'MsiCmfBundle::layout.html.twig': 'Default'
+            'MsiPaintBundle:Gallery:index': 'Liste des galeries'
         templates:
             'MsiCmfBundle::layout.html.twig': 'Default'
         slots:
