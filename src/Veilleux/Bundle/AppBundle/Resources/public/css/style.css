@@ -1,21 +1,21 @@
 body {
-    /*background: #FF7A00;*/
-    background: #057d9f;
-    /*color: #06266F;*/
-    color: #fff;
+    background: #009e8e;
+    /*background: #057d9f;*/
+    color: #06266F;
+    /*color: #fff;*/
 }
 
 a {
-    color: #fff;
+    color: #06266F;
 }
 
 a:hover {
     text-decoration: none;
-    color: #000;
+    color: #fff;
 }
 
 .menu > li.active > a {
-    color: #000;
+    color: #fff;
 }
 
 #content, #sidebar {
@@ -64,4 +64,8 @@ a:hover {
     -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
     -moz-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
 }
