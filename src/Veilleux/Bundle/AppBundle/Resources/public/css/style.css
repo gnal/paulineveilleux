@@ -1,8 +1,6 @@
 body {
     background: #009e8e;
-    /*background: #057d9f;*/
     color: #06266F;
-    /*color: #fff;*/
 }
 
 a {
@@ -90,3 +88,5 @@ table td {
     float: left;
     margin: 0 35px 25px 0;
 }
+
+#cboxOverlay{background:#009e8e !important;}
