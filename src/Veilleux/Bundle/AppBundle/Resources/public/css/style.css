@@ -16,6 +16,11 @@ a:hover {
     color: #fff;
 }
 
+#content {
+    height: 500px;
+    overflow-y: scroll;
+}
+
 #content, #sidebar {
     padding: 0 15px;
     border: 5px solid #06266F;

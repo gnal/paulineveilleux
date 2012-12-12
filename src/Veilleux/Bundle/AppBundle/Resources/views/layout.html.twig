@@ -2,6 +2,14 @@
 
 {% block slogan %}Artiste peintre{% endblock slogan %}
 
+{% block meta_keywords %}
+art, galerie d'art, abstrait, acrylique, symposium, expositions, artiste, peintre, canada, québec, montréal, peintures, peinture
+{% endblock meta_keywords %}
+
+{% block meta_description %}
+Pauline Veilleux artiste peinture depuis 2008.
+{% endblock meta_description %}
+
 {% block social %}
 <a target="_blank" href="https://www.facebook.com/pauline.veilleux.9"><img src="{{ asset('bundles/msipaint/img/facebook-white-32.png') }}" alt="Facebook"></a>
 {% endblock social %}
@@ -28,6 +36,19 @@ Pauline Veilleux
     ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
     var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
   })();
+</script>
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-36987811-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
 </script>
 {% endblock js %}
 
