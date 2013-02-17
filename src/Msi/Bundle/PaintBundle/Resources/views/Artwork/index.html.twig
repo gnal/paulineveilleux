@@ -1,0 +1,65 @@
+{% set template = page.template ?: 'MsiPaintBundle::layout.html.twig' %}
+{% extends template %}
+
+{% block content %}
+{% for artwork in artworks %}
+    {% if loop.index == 1 or loop.index % 3 == 1 %}
+        <div class="row-fluid">
+    {% endif %}
+    <div class="span4">
+        <div class="thumbnail" style="margin-bottom:20px;">
+            <a class="group1" href="{{ artwork.pathname }}"><img src="{{ artwork.pathname('t_') }}" alt=""></a>
+            <div class="caption" style="padding-bottom:5px;">
+                {% if artwork.code %}<strong style="color:#7109aa;">{{ artwork.code }}</strong>{% endif %}
+                <strong class="text-info">{{ block('brand') }}</strong><br>
+                {% if artwork.title %}
+                    {{ artwork.title }}<br>
+                {% endif %}
+                {% if artwork.size %}
+                    {{ artwork.size }}<br>
+                {% endif %}
+                {% if artwork.medium %}
+                    {{ artwork.medium }}<br>
+                {% endif %}
+                {% if artwork.year %}
+                    {{ artwork.year }}<br>
+                {% endif %}
+                <strong class="text-error">
+                    {% if artwork.sold %}<span class="pull-right">{{ 'Sold'|trans }}</span>{% endif %}
+                    {% if artwork.sold == false %}{{ artwork.price }} ${% endif %}
+                </strong>
+                {% if artwork.sold == false %}
+                <form style="margin:5px auto 0;text-align:center;" name="_xclick" action="https://www.paypal.com/cgi-bin/webscr" method="post">
+                    <input type="hidden" name="cmd" value="_xclick">
+                    <input type="hidden" name="business" value="{{ block('email') }}">
+                    <input type="hidden" name="currency_code" value="CAD">
+                    <input type="hidden" name="item_name" value="{{ artwork.title }}">
+                    <input type="hidden" name="item_number" value="{{ artwork.code }}">
+                    <input type="hidden" name="amount" value="{{ artwork.price }}">
+                    <input type="image" src="https://www.paypalobjects.com/fr_CA/i/btn/btn_buynow_SM.gif" border="0" name="submit" alt="Make payments with PayPal - it's fast, free and secure!">
+                </form>
+                {% endif %}
+                <div class="clearfix"></div>
+            </div>
+        </div>
+    </div>
+    {% if loop.index == artworks|length or loop.index % 3 == 0 %}
+        </div>
+    {% endif %}
+{% endfor %}
+{% endblock content %}
+
+{% block title %}{{ gallery }}{% endblock title %}
+
+{% block css %}
+{{ parent() }}
+<link rel="stylesheet" href="{{ asset('bundles/msipaint/vendor/colorbox/example2/colorbox.css') }}">
+{% endblock css %}
+
+{% block js %}
+{{ parent() }}
+<script src="{{ asset('bundles/msipaint/vendor/colorbox/colorbox/jquery.colorbox-min.js') }}"></script>
+<script>
+    $('.group1').colorbox({rel:'group1'});
+</script>
+{% endblock js %}

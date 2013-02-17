@@ -1,0 +1,7 @@
+msi_paint_artwork_index:
+    pattern:  /galeries/{slug}/oeuvres
+    defaults: { _controller: MsiPaintBundle:Artwork:index }
+
+msi_paint_contact_new:
+    pattern:  /contact
+    defaults: { _controller: MsiPaintBundle:Contact:new }

@@ -1,0 +1,16 @@
+{% for gallery in galleries %}
+    {% if loop.index == 1 or loop.index % 3 == 1 %}
+        <div class="row-fluid">
+    {% endif %}
+    <div class="span4">
+        <div class="thumbnail" style="margin-bottom:20px;">
+            <a href="{{ path('msi_paint_artwork_index', {'slug': gallery.translation.slug}) }}"><img src="{{ gallery.artworks.first.pathname('t_') }}" alt=""></a>
+            <div class="caption" style="padding-bottom:5px;">
+                <strong>{{ gallery.translation.name }} <span class="muted">({{ gallery.artworks.count }})</span></strong>
+            </div>
+        </div>
+    </div>
+    {% if loop.index == galleries|length or loop.index % 3 == 0 %}
+        </div>
+    {% endif %}
+{% endfor %}

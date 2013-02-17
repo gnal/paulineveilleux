@@ -1,0 +1,8 @@
+entity:
+    Gallery: Gallery|Galleries
+    Artwork: Artwork|Artworks
+    Slider: Slider|Sliders
+    Slide: Slide|Slides
+
+Pausetime: Pause time
+Slidespeed: Transition speed

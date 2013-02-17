@@ -1,0 +1,27 @@
+{% set template = page.template ?: 'MsiPaintBundle::layout.html.twig' %}
+{% extends template %}
+
+{% block content %}
+<iframe class="pull-right" width="390" height="300" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?q=358+Rue+Darveau,+Longueuil,+QC,+Canada&amp;layer=c&amp;sll=45.517913,-73.459984&amp;cbp=13,25.5,,0,0&amp;cbll=45.517889,-73.460002&amp;hl=en&amp;ie=UTF8&amp;hq=&amp;hnear=358+Rue+Darveau,+Longueuil,+Qu%C3%A9bec+J4L+2T7,+Canada&amp;ll=45.517912,-73.459984&amp;spn=0.010058,0.025578&amp;t=m&amp;z=14&amp;panoid=m3vnWBnRg-Kw2w4CsNiqWg&amp;source=embed&amp;output=svembed"></iframe>
+                    <strong>Pauline Veilleux</strong>
+                    <br>
+                    358 Darveau
+                    <br>
+                    Longueuil, Québec, Canada
+                    <br>
+                    J4L 2T8
+                    <br>
+                    Tél : (450) 800-1746
+                    <br>
+                    Email : <a target="_blank" href="mailto:pauline.veilleux@gmail.com">pauline.veilleux@gmail.com</a>
+                    <br>
+                    Skype : pauline.veilleux46
+                    <br>
+                    www.paulineveilleux.com
+                </p>
+
+    <form novalidate action="{{ path('msi_paint_contact_new') }}" method="POST">
+        {{ form_widget(form) }}
+        <button class="btn" type="submit">{{ 'Send'|trans }}</button>
+    </form>
+{% endblock content %}

@@ -1,0 +1,18 @@
+<div id="slider-model-a">
+    <ul class="unstyled slider">
+        {% for slide in slider.slides %}
+        <li>
+            <img class="img-polaroid" src="{{ slide.pathname }}" alt="">
+        </li>
+        {% endfor %}
+    </ul>
+
+    <div class="carousel-wrap">
+        <ul class="unstyled carousel">
+            {% for slide in slider.slides %}
+            <li>
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+</div>

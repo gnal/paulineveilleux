@@ -1,0 +1,15 @@
+{
+    "name": "msi/paint-bundle",
+    "type": "symfony-bundle",
+    "license": "MITf",
+    "authors": [
+        {
+            "name": "Alexis Joubert",
+            "email": "alexisjoubert@groupemsi.com"
+        }
+    ],
+    "autoload": {
+        "psr-0": { "Msi\\Bundle\\PaintBundle": "" }
+    },
+    "target-dir": "Msi/Bundle/PaintBundle"
+}

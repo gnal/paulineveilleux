@@ -1,0 +1,8 @@
+<script src="{{ asset('bundles/msipaint/vendor/msi-slider/js/msi-slider.js') }}"></script>
+<script>
+    $('#slider-model-a').msiSlider({
+        infinite: false,
+        pauseTime: {{ slider.pauseTime }},
+        slideSpeed: {{ slider.slideSpeed }}
+    });
+</script>

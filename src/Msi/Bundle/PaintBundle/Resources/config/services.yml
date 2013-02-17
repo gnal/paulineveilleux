@@ -1,0 +1,81 @@
+parameters:
+#    msi_paint.example.class: Msi\Bundle\PaintBundle\Example
+
+services:
+    # Event Listener
+    msi_paint.request_listener:
+        class: Msi\Bundle\PaintBundle\EventListener\RequestListener
+        tags:
+            - { name: kernel.event_listener, event: kernel.request, method: onKernelRequest}
+
+    # Form Handler
+    msi_paint.contact_form_handler:
+        class: Msi\Bundle\PaintBundle\Form\Handler\ContactFormHandler
+        arguments: [ @request, @templating ]
+        scope: request
+
+    # Twig Extension
+    msi_paint.paint.twig.extension:
+        class: Msi\Bundle\PaintBundle\Twig\Extension\PaintExtension
+        tags:
+            - { name: twig.extension }
+
+    # Gallery
+    msi_paint_gallery_admin:
+        class: Msi\Bundle\PaintBundle\Admin\GalleryAdmin
+        arguments: [ @msi_paint.gallery_manager ]
+        parent: msi_cmf.admin
+        tags:
+            - { name: msi.admin }
+        calls:
+            - [ setChild, [ @msi_paint_artwork_admin ] ]
+
+    msi_paint.gallery_manager:
+        class: %msi_cmf.manager.class%
+        arguments: [ Msi\Bundle\PaintBundle\Entity\Gallery ]
+        parent: msi_cmf.manager
+
+    # Artwork
+    msi_paint_artwork_admin:
+        class: Msi\Bundle\PaintBundle\Admin\ArtworkAdmin
+        arguments: [ @msi_paint.artwork_manager ]
+        parent: msi_cmf.admin
+        tags:
+            - { name: msi.admin }
+        calls:
+            - [ setParent, [ @msi_paint_gallery_admin ] ]
+
+    msi_paint.artwork_manager:
+        class: %msi_cmf.manager.class%
+        arguments: [ Msi\Bundle\PaintBundle\Entity\Artwork ]
+        parent: msi_cmf.manager
+
+    # Slider
+    msi_paint_slider_admin:
+        class: Msi\Bundle\PaintBundle\Admin\SliderAdmin
+        arguments: [ @msi_paint.slider_manager ]
+        parent: msi_cmf.admin
+        tags:
+            - { name: msi.admin }
+        calls:
+            - [ setChild, [ @msi_paint_slide_admin ] ]
+
+    msi_paint.slider_manager:
+        class: %msi_cmf.manager.class%
+        arguments: [ Msi\Bundle\PaintBundle\Entity\Slider ]
+        parent: msi_cmf.manager
+
+    # Slide
+    msi_paint_slide_admin:
+        class: Msi\Bundle\PaintBundle\Admin\SlideAdmin
+        arguments: [ @msi_paint.slide_manager ]
+        parent: msi_cmf.admin
+        tags:
+            - { name: msi.admin }
+        calls:
+            - [ setParent, [ @msi_paint_slider_admin ] ]
+
+    msi_paint.slide_manager:
+        class: %msi_cmf.manager.class%
+        arguments: [ Msi\Bundle\PaintBundle\Entity\Slide ]
+        parent: msi_cmf.manager
