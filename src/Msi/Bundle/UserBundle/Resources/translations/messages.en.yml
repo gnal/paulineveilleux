@@ -1,0 +1,10 @@
+entity:
+    User: User|Users
+    Group: Group|Groups
+
+security:
+    login:
+        forgot_password: Forgot password?
+
+Username: Username
+Password: Password

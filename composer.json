@@ -4,11 +4,6 @@
     "autoload": {
         "psr-0": { "": "src/" }
     },
-    "repositories": [
-        { "type": "vcs", "url": "https://github.com/gnal/MsiCmfBundle.git" },
-        { "type": "vcs", "url": "https://github.com/gnal/MsiUserBundle.git" },
-        { "type": "vcs", "url": "https://github.com/gnal/MsiPaintBundle.git" }
-    ],
     "require": {
         "php": ">=5.3.3",
         "symfony/symfony": "2.1.*",
@@ -27,11 +22,7 @@
         "doctrine/doctrine-fixtures-bundle": "dev-master",
         "gedmo/doctrine-extensions": "dev-master",
         "friendsofsymfony/user-bundle": "dev-master",
-        "knplabs/knp-menu-bundle": "dev-master",
-
-        "msi/cmf-bundle": "dev-master",
-        "msi/user-bundle": "dev-master",
-        "msi/paint-bundle": "dev-master"
+        "knplabs/knp-menu-bundle": "dev-master"
     },
     "scripts": {
         "post-install-cmd": [
