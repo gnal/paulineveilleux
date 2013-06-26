@@ -22,7 +22,7 @@ class ArtworkController extends ContainerAware
         $artworks = $this->container->get('msi_paint.artwork_manager')->getFindByQueryBuilder(
             array('a.published' => true, 'a.gallery' => $gallery),
             array(),
-            array('a.code' => 'ASC')
+            array('a.code' => 'DESC')
         )->getQuery()->execute();
 
         return $this->container->get('templating')->renderResponse('MsiPaintBundle:Artwork:index.html.twig', array('gallery' => $gallery, 'artworks' => $artworks));
